@@ -1,0 +1,19 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20vh;
+  .about-link {
+    padding-bottom: 3vh;
+  }
+  .projects-link {
+    @extend .about-link
+  }
+  a {
+    font-family: $header-font;
+    font-weight: 300;
+    font-size: 1.4em;
+    text-decoration: none;
+    color: $secondary-color;
+  }
+}
