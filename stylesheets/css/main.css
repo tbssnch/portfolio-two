@@ -25,7 +25,7 @@
 .footer .icons {
   align-self: center;
   font-size: 2em;
-  padding: 1vh;
+  padding: 2vh;
 }
 
 .logo {
@@ -37,14 +37,15 @@ body {
 }
 
 .container {
-  border: 4px solid #222826;
   box-sizing: border-box;
-  position: relative;
+  position: absolute;
   background-color: transparent;
+  height: 100%;
+  width: 100%;
+  margin-left: 20px;
 }
 .container::before, .container::after {
-  z-index: 1;
-  border: 4px solid transparent;
+  border: 10px solid transparent;
   box-sizing: border-box;
   content: '';
   position: absolute;
@@ -55,14 +56,16 @@ body {
 .container::before {
   top: 0;
   left: 0;
-  animation: border-before 1.5s infinite;
+  animation: border-before 1.5s normal;
   animation-direction: alternate;
+  animation-fill-mode: forwards;
 }
 .container::after {
   bottom: 0;
   right: 0;
-  animation: border-after 1.5s infinite;
+  animation: border-after 1.5s normal;
   animation-direction: alternate;
+  animation-fill-mode: forwards;
 }
 
 @keyframes border-before {
@@ -104,8 +107,8 @@ body {
   49% {
     width: 0;
     height: 0;
-    border-top-color: transparent;
-    border-right-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
   }
   50% {
     width: 0;
@@ -113,15 +116,15 @@ body {
     border-left-color: transparent;
     border-bottom-color: #222826;
   }
-  74% {
+  74.99% {
     border-left-color: transparent;
     border-bottom-color: #222826;
   }
   75% {
-    width: 100%;
     height: 0;
-    border-top-color: #222826;
-    border-right-color: #222826;
+    width: 100%;
+    border-left-color: #222826;
+    border-bottom-color: #222826;
   }
   100% {
     width: 100%;
